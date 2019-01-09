@@ -1,0 +1,25 @@
+{
+  "name": "padrenamer-file",
+  "version": "1.0.0",
+  "description": "Rename all the file into a gived directory, padding the name",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osvaldo2627/padrenamer-file.git"
+  },
+  "keywords": [
+    "pad",
+    "rename",
+    "files"
+  ],
+  "author": "valdo2627",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osvaldo2627/padrenamer-file/issues"
+  },
+  "homepage": "https://github.com/osvaldo2627/padrenamer-file#readme"
+}
