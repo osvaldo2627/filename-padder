@@ -4,15 +4,19 @@ For example to order logs files, enumerated images or track.
 
 For example, if we have the following music tracks on a directory, they will not be properly 
 sorted because of the order is just alphabetic. 
+
+```
 track-1-music.mp3
 track-2-music.mp3
 ...
 track-9-music.mp3
+..
 track-11-music.mp3
 ...
 track-90-music.mp3
 ...
 track-101-music.mp3
+```
 
 This module allows to rename the files adding padding to an specific variable sector.
 
