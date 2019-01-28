@@ -45,3 +45,6 @@ track-0090-music.mp3
 ...
 track-0101-music.mp3
 ```
+
+## note: this implementation is sync, you should avoid using it on big amount of files if your server must handler other operations. Async impl comming soon for that case.
+
