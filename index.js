@@ -31,14 +31,14 @@ module.exports = {
                 try {
                     fs.renameSync(`${folder}${separator}${item.currentName}`, `${folder}${separator}${item.newName}`)
                 } catch (error) {
-                    console.log(`file renamed from ${item.currentName} to ${item.newName}`);
+                    console.log(`Error renaming file from ${item.currentName} to ${item.newName}`);
                 }
             }
             return arrayReplace;
         } catch (error) {
             console.log('ERROR: ' + error);
-            return null;
         }
+        return null;
     }
 }
 
