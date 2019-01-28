@@ -31,7 +31,7 @@ let path = "/data/myTracks/"
 
 ```
 
-The output for the above example:
+Output for the above example:
 
 ```
 track-0001-music.mp3
