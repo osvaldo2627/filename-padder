@@ -1,9 +1,9 @@
 ## filename-padder module
-Use this module to rename files on a directory that follows a numeric pattern.
-For example to order logs files, enumerated images or tracks.
+Use this module to rename files on a directory that follows a numeric pattern as
+logs files, enumerated images or tracks.
 
-For example, if we have the following music tracks on a directory, they will not be properly 
-sorted because of the order is just alphabetic. 
+For example, if we have the following music tracks on a directory, it will not be properly sorted for most of the devices as well as for any read directory function, 
+because it is just an alphabetic sorted.  
 
 ```
 track-1-music.mp3
@@ -65,4 +65,4 @@ npm run test
 ```
 
 
-## note: This implementation is sync, you should avoid using it on big amount of files if your server must handler other operations. Async impl comming soon for that case.
+## note: This implementation is sync, you should avoid using it on a big amount of files if your server must handler other operations. Async implementation coming soon for that case.
