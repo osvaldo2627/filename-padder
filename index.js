@@ -40,8 +40,5 @@ module.exports = {
             return null;
         }
     }
-
-}//("D:\\Development\\filename-padder\\test\\test-directory", "file-(?var).json", 4, "0");
-
-//require('make-runnable');
+}
 
