@@ -1,6 +1,6 @@
 ## filename-padder module
 Use this module to rename files on a directory that follows a numeric pattern.
-For example to order logs files, enumerated images or track.
+For example to order logs files, enumerated images or tracks.
 
 For example, if we have the following music tracks on a directory, they will not be properly 
 sorted because of the order is just alphabetic. 
@@ -29,6 +29,19 @@ let path = "/data/myTracks/"
   charToPadWith = '0',
   lentPath = 4;
 
+```
 
+The output will for the above example:
 
+```
+track-0001-music.mp3
+track-0002-music.mp3
+...
+track-0009-music.mp3
+..
+track-0011-music.mp3
+...
+track-0090-music.mp3
+...
+track-0101-music.mp3
 ```
