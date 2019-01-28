@@ -24,10 +24,12 @@ This module allows to rename the files adding padding to an specific variable se
 ```
 const fPadder = require("filename-padder");
 
-let path = "/data/myTracks/"
-  pattern = "track-(?var)-music.mp3",
-  charToPadWith = '0',
-  lentPath = 4;
+//on a windows path, please use \\, for example D:\\Development\\my-files-to-rename\\files
+let path = "/data/myTracks/";
+
+  let pattern = "track-(?var)-music.mp3",
+      chartPad = '0',
+      lengthPad = 4;
 
 ```
 
