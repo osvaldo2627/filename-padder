@@ -21,7 +21,7 @@ wao-other-file-no-match.txt
 ```
 
 ## How to use it:
-To describe the patter just add (?var) on the section that we want to pad
+To describe the pattern just add (?var) on the sector that we want to pad,
 in this case: 
 
 track-(?var)-music.mp3
@@ -42,18 +42,15 @@ let path = "/data/myTracks/";
 
 Output for the above example:
 
-result = to [array with renamed files] or null in case of error.
+1-All files are renamed on the target directory.
+2-result variable = to [array with renamed filenames] or null in case of error.
 
 ```
 track-0001-music.mp3
 track-0002-music.mp3
-...
 track-0009-music.mp3
-..
 track-0011-music.mp3
-...
 track-0090-music.mp3
-...
 track-0101-music.mp3
 wao-other-file-no-match.txt
 ```
