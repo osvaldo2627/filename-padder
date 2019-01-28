@@ -16,6 +16,7 @@ track-11-music.mp3
 track-90-music.mp3
 ...
 track-101-music.mp3
+wao-other-file-no-match.mp3
 ```
 
 This module allows to rename the files adding padding to an specific variable sector.
@@ -30,10 +31,14 @@ let path = "/data/myTracks/";
   let pattern = "track-(?var)-music.mp3",
       chartPad = '0',
       lengthPad = 4;
+  
+  let result = fPadder.padRenameSync(path, pattern, lengthPad, chartPad);
 
 ```
 
 Output for the above example:
+
+result = to [array with renamed files] or null in case of error.
 
 ```
 track-0001-music.mp3
@@ -46,7 +51,18 @@ track-0011-music.mp3
 track-0090-music.mp3
 ...
 track-0101-music.mp3
+wao-other-file-no-match.mp3
 ```
 
-## note: this implementation is sync, you should avoid using it on big amount of files if your server must handler other operations. Async impl comming soon for that case.
+## Test
+```
 
+git clone https://github.com/osvaldo2627/filename-padder.git 
+cd filename-padder
+npm install 
+npm run test
+
+```
+
+
+## note: this implementation is sync, you should avoid using it on big amount of files if your server must handler other operations. Async impl comming soon for that case.
