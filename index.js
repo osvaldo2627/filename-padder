@@ -1,33 +1,47 @@
 
-const padder = require("./padder");
+const stringPadder = require("string-pad-pattern");
 const fs = require("fs");
+const path = require("path");
 
-module.exports = function init (folder, pattern, padLenght=5, padString ='0', padRight=false){
-    
-    try {
-        let files = fs.readdirSync(folder);
-        let separator = process.platform === 'win32' ? '\\' : '/';
+/**
+ * 
+ * @param {string} folder target folder to apply padding to the files that match the patter
+ * @param {string} pattern patter to search and rename, rember use (?var) on the target section
+ * @param {int} padLenght the lenght of the padded section after padding
+ * @param {string} padString the characters or set of that should be use for the padding, defualt '0'
+ * @param {boolean} padRight boolean value 
+ */
+module.exports = {
 
-        //mapping array to get the padded version of the current name
-        let arrayReplace = files.map((file)=>{
-            let paddedName = padder.padString( file, pattern, 6, '0');
-            return { currentName : file, newName : paddedName }
-        })   
+    padRenameSync(folder, pattern, padLenght = 5, padString = '0', padRight = false) {
 
-        //looping to rename the file for the padded version        
-        for (let item of arrayReplace){
-            
-            fs.rename(`${folder}${separator}${item.currentName}`, `${folder}${separator}${item.newName}` ,  (err)=> {
-                if ( err ) console.log('ERROR: ' + err);
-                console.log(`file renamed from ${item.currentName} to ${item.newName}`);
-            });
+        try {
+            folder = path.normalize(folder);
+            let files = fs.readdirSync(folder);
+            let separator = process.platform === 'win32' ? '\\' : '/';
+
+            //mapping array to get the padded version of the current name
+            let arrayReplace = files.map((file) => {
+                let paddedName = stringPadder.padPattern(file, pattern, padLenght, padString, padRight);
+                return { currentName: file, newName: paddedName }
+            })
+
+            //looping to rename the file for the padded version        
+            for (let item of arrayReplace) {
+                try {
+                    fs.renameSync(`${folder}${separator}${item.currentName}`, `${folder}${separator}${item.newName}`)
+                } catch (error) {
+                    console.log(`file renamed from ${item.currentName} to ${item.newName}`);
+                }
+            }
+            return arrayReplace;
+        } catch (error) {
+            console.log('ERROR: ' + error);
+            return null;
         }
-       
-    } catch (error) {
-        console.log('ERROR: ' + error);
     }
-    
-}("D:\\Development\\padrenamer-file\\test\\test-directory", "file-(?var).json" );
+
+}//("D:\\Development\\filename-padder\\test\\test-directory", "file-(?var).json", 4, "0");
 
 //require('make-runnable');
 
