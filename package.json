@@ -1,5 +1,5 @@
 {
-  "name": "padrenamer-file",
+  "name": "filename-padder",
   "version": "1.0.0",
   "description": "Rename all the file into a gived directory, padding the name",
   "main": "index.js",
